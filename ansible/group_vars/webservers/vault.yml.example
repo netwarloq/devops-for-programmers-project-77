@@ -1,0 +1,7 @@
+db_host: <database host>
+db_name: <database name>
+db_user: <database user>
+db_pass: <database password>
+db_port: <database port>
+
+dd_api_key: <your datadog api key>

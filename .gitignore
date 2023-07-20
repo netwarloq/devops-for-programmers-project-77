@@ -1,0 +1,14 @@
+# terraform
+.terraform
+.terraform.lock.hcl
+secret.*
+secrets.tfvars*
+*.auto.tfvars
+*.tfstate
+*.tfstate.*
+*.backup
+
+# ansible
+.env
+inventory.ini
+vault.yml
