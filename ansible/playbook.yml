@@ -1,11 +1,11 @@
 - hosts: all
   tasks:
-    - name: Update pkgs apt
-      ansible.builtin.apt:
-        update_cache: true
-        upgrade: true
-        cache_valid_time: 86400
-      become: true
+    # - name: Update pkgs apt
+    #   ansible.builtin.apt:
+    #     update_cache: true
+    #     upgrade: true
+    #     cache_valid_time: 86400
+    #   become: true
 
     - name: Install pip and docker module with pip
       include_role:
