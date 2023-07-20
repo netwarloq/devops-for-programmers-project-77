@@ -45,7 +45,7 @@ make init
 make infra_plan
 ```
 
-* Apply for Create infra:
+* Apply for Create infra and generate inventory file and vault:
 ``` bash
 make infra_up
 ```
@@ -55,8 +55,32 @@ make infra_up
 make infra_del
 ```
 
-### Deploy App
-* First need to create a file groups_vars/webservers/vault.yml
+### Deploy app
+* Encrypt sensitive files:
+``` bash
+make encrypt
+```
+
+* Setup (install requirements)
+``` bash
+make setup
+```
+
+* Deploy
+``` bash
+make deploy
+```
+
+* For encrypt sensitive files use:
+``` bash
+make decrypt
+```
+
+<details>
+<summary>Manual Deploy App</summary>
+<br>
+
+* First need to create a file groups_vars/webservers/vault.yml (Terraform generated vault)
 
 ```bash 
 cd groups_vars/webservers/
@@ -66,6 +90,7 @@ db_name: <your_database_name>
 db_user: <your_database_user> 
 db_pass: <your_database_password> 
 db_port: <your_database_port> 
+dd_api_key: <your DataDog api key>
 ```
 
 * Then encrypt Vault file for security:
@@ -98,6 +123,7 @@ make deploy
 ansible-playbook -i inventory.ini playbook.yml -t <deploy/datadog/untagged> --ask-vault-pass --check
 ```
 untagged use for setup (install pip/docker)
+</details>
 
 ### Links:
 - [Official Ansible documentation](https://docs.ansible.com/)
