@@ -9,6 +9,6 @@ resource "digitalocean_droplet" "web" {
 }
 
 data "digitalocean_tag" "webtag" {
-    name = "${var.namepj}-web"  
-    depends_on = [ digitalocean_droplet.web ]
+  name       = "${var.namepj}-web"
+  depends_on = [digitalocean_droplet.web]
 }
