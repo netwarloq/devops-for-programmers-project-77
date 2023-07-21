@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     digitalocean = {
-      source = "digitalocean/digitalocean"
+      source  = "digitalocean/digitalocean"
       version = "~> 2.0"
     }
     datadog = {
@@ -17,8 +17,8 @@ provider "digitalocean" {
 }
 
 provider "datadog" {
-  api_key = var.dd_api_key
-  app_key = var.dd_app_key
+  api_key = var.datadog_api_key
+  app_key = var.datadog_app_key
   api_url = "https://api.datadoghq.eu/"
 }
 

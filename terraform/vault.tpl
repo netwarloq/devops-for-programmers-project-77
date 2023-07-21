@@ -4,4 +4,4 @@ db_user: "${db_user}"
 db_pass: "${db_pass}"
 db_port: "${db_port}"
 
-dd_api_key: "${dd_api_key}"
+dd_api_key: "${datadog_api_key}"

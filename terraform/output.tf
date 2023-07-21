@@ -7,7 +7,7 @@ output "vault" {
       db_user    = digitalocean_database_cluster.postgres-db-cl.user,
       db_pass    = nonsensitive(digitalocean_database_cluster.postgres-db-cl.password),
       db_name    = digitalocean_database_cluster.postgres-db-cl.database,
-      dd_api_key = nonsensitive(var.dd_api_key)
+      dd_api_key = nonsensitive(var.datadog_api_key)
     }
   )
 }

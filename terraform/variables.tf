@@ -34,13 +34,13 @@ variable "domain_project" {
   sensitive   = true
 }
 
-variable "dd_api_key" {
+variable "datadog_api_key" {
   description = "DataDog API key"
   type        = string
   sensitive   = true
 }
 
-variable "dd_app_key" {
+variable "datadog_app_key" {
   description = "DataDog APP key"
   type        = string
   sensitive   = true
