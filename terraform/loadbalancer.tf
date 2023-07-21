@@ -22,8 +22,8 @@ resource "digitalocean_loadbalancer" "web-lb" {
   healthcheck {
     port     = 3000
     protocol = "http"
-    path     =  "/"
+    path     = "/"
   }
 
-  droplet_ids = digitalocean_droplet.web.*.id
+  droplet_ids = [digitalocean_droplet.web[0].id, digitalocean_droplet.web[1].id]
 }
