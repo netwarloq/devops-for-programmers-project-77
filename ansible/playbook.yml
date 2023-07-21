@@ -3,9 +3,8 @@
     # - name: Update pkgs apt
     #   ansible.builtin.apt:
     #     update_cache: true
-    #     upgrade: true
+    #     upgrade: false
     #     cache_valid_time: 86400
-    #   become: true
 
     - name: Install pip and docker module with pip
       include_role:
@@ -39,14 +38,3 @@
     - name: DataDog setup
       include_role:
         name: datadog.datadog
-      vars:
-        datadog_api_key: "{{ dd_api_key }}"
-        datadog_site: "datadoghq.eu"
-        datadog_checks:
-          http_check:
-            init_config:
-            instances:
-              - name: HTTP Check app
-                method: GET
-                timeout: 5
-                url: "http://{{ ansible_host }}:3000"

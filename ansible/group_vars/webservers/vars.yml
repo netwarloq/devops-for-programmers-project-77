@@ -1,0 +1,10 @@
+datadog_api_key: "{{ dd_api_key }}"
+datadog_site: "datadoghq.eu"
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: HTTP Check app
+        method: GET
+        timeout: 5
+        url: "http://{{ ansible_host }}:3000"
