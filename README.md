@@ -36,7 +36,7 @@ dd_app_key = "your DataDog APP key"
 ```
 
 * then init:
-```
+``` bash
 make init
 ```
 

@@ -4,7 +4,7 @@ resource "digitalocean_droplet" "web" {
   name     = "${var.namepj}-${count.index + 1}"
   region   = var.regiondc
   size     = "s-1vcpu-1gb"
-  ssh_keys = [data.digitalocean_ssh_key.ssh.id]
+  ssh_keys = [data.digitalocean_ssh_key.ssh.fingerprint]
   tags     = ["${var.namepj}-web"]
 }
 
