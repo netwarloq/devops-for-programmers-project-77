@@ -8,10 +8,10 @@ resource "digitalocean_database_firewall" "db-fw" {
 }
 
 resource "digitalocean_database_cluster" "postgres-db-cl" {
-  name          = "${var.namepj}-postgres-cluster"
-  engine        = "pg"
-  version       = "15"
-  size          = "db-s-1vcpu-1gb"
-  region        = var.regiondc
-  node_count    = 1
+  name       = "${var.namepj}-postgres-cluster"
+  engine     = "pg"
+  version    = "15"
+  size       = "db-s-1vcpu-1gb"
+  region     = var.regiondc
+  node_count = 1
 }
