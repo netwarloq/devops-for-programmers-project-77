@@ -25,5 +25,11 @@ resource "digitalocean_loadbalancer" "web-lb" {
     path     = "/"
   }
 
+  sticky_sessions {
+    type               = "cookies"
+    cookie_name        = "${var.namepj}_cookies"
+    cookie_ttl_seconds = 300
+  }
+
   droplet_ids = [digitalocean_droplet.web[0].id, digitalocean_droplet.web[1].id]
 }
